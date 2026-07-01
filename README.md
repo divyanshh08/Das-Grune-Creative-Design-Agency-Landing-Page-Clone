@@ -1,4 +1,4 @@
-# Das Grüne — Creative Design Agency Landing Page
+# Das Grüne — Creative Design Agency Landing Page Clone
 
 A pixel-focused recreation of a creative agency landing page, built from scratch using pure HTML and CSS. This is my **first genuine project** — built to push my fundamentals in layout, typography, and visual hierarchy beyond tutorial-following.
 
