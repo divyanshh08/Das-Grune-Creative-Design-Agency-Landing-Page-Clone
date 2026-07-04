@@ -507,6 +507,9 @@ section .agency{
 .project-pics .l1{
     margin-top: 40px;
 }
+.project-pics .l2{
+    margin-top: 30px;
+}
 
 /* Common styling for both rows */
 .project-pics .l1,
@@ -518,7 +521,7 @@ section .agency{
 
 /* Common styling for all blocks */
 .project-pics [class^="l"] > div {
-  height: 480px; /* Adjust height as needed */
+  height: 450px; /* Adjust height as needed */
   background-color: #e0e0e0; /* Fallback color */
   background-size: cover;
   background-position: center;
@@ -632,4 +635,59 @@ section .agency{
   font-size: 70px;
   font-weight: 700; /* Heavier weight */
   letter-spacing: 2px;
+}
+.follow-us-sec{
+    height: 800px;
+    margin-top: 150px;
+    background-color: #ccff00;
+    text-align: center;
+    padding-top: 200px;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+}
+.discuss h1{
+    font-size: 150px;
+}
+.interact{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+}
+.interact h1{
+    font-weight: 400;
+    font-size: 40px;
+}
+.talk, .follow{
+    border: solid 5px black;
+    border-radius: 50px; 
+    width: 320px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer{
+    margin-top: 100px;
+}
+.designer{
+    text-align: center;
+}
+.designer h1{
+    font-size: 100px;
+    color: #ccff00;
+    font-weight: 500;
+}
+.footer-links{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ccff00;
+}
+.footer-links h1{
+    font-weight: 250;
+    font-size: 30px;
 }
