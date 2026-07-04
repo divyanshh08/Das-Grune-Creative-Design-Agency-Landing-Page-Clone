@@ -327,39 +327,6 @@ section .agency{
     font-weight: 0;
 }
 
-/*
-.quote{
-    margin-top: 150px;
-    background-color: #292929;
-    height: 1000px;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 120px;
-}
-.quote .line{
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #c4c4c4;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
-.quote .line h1{
-    font-size: 100px;
-    font-weight: 300;
-}
-
-.line #b1{
-    height: 80px;
-    width: 300px;
-    background-color: coral;
-}
-*/
-
-/* Updated code by gemini */
 .quote {
     margin-top: 100px;
     background-color: #292929;
@@ -405,6 +372,9 @@ section .agency{
     width: 300px;
     border-radius: 80px;
     background-color: #555; /* Placeholder grey */
+    background-image: url(https://i.pinimg.com/1200x/0d/40/bd/0d40bd812b23282577b1028828ac544b.jpg);
+    background-position: bottom;
+    background-size: cover;
 }
 
 /* Abstract circle */
@@ -413,6 +383,9 @@ section .agency{
     width: 150px;
     border-radius: 50px;
     background-color: #555;
+    background-image: url(https://i.pinimg.com/1200x/0d/40/bd/0d40bd812b23282577b1028828ac544b.jpg); 
+    background-position: bottom;
+    background-size: cover;
 }
 
 /* Neon arrow circle */
@@ -429,9 +402,97 @@ section .agency{
     color: #000;
     font-size: 40px;
 }
+.line .B3 i{
+    font-size: 80px;
+}
 .line .B5{
     height: 100px;
     width: 220px;
     border-radius: 60px;
     background-color: #c4c4c4;
+    background-image: url(https://i.pinimg.com/1200x/0d/40/bd/0d40bd812b23282577b1028828ac544b.jpg); 
+    background-position: bottom;
+    background-size: cover;
+}
+
+.best-project-sec{
+    margin-top: 150px;
+    color: #c4c4c4;
+}
+.best-projects{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.best-projects h1{
+    font-size: 150px;
+    color: #c4c4c4;
+}
+.best-projects span{
+    color: #ccff00;
+    font-size: 200px;
+}
+.best-projects p{
+    font-size: 35px;
+    color: #5e5d5d;
+    font-weight: 500;
+    /* flex-wrap: wrap; */
+}
+.project-categories{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.project-categories button{
+    font-size: 22px;
+    gap: 10px;
+}
+.project-categories h1{
+    font-weight: 400;
+    color: #928f8f;
+}
+.project-categories button i{
+    font-size: 40px;
+    color: #928f8f;
+}
+.design-btn {
+  /* Flexbox alignment for icon and text */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between globe icon and text */
+  
+  /* Dimensions & Padding */
+  padding: 8px 20px;
+  
+  /* Typography & Color */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #c4c4c4;
+  
+  /* Pill Shape & Border */
+  background-color: transparent;
+  border: 1.5px solid #c4c4c4;
+  border-radius: 9999px; /* Creates the full capsule/pill shape */
+  
+  /* Interactive properties */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Icon specific sizing */
+.design-btn i {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: Smooth hover effect */
+.design-btn:hover {
+  background-color: rgba(196, 196, 196, 0.1);
+  border-color: #ffffff;
+  color: #ffffff;
 }
