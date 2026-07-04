@@ -496,3 +496,140 @@ section .agency{
   border-color: #ffffff;
   color: #ffffff;
 }
+ /* project pics part */
+.project-pics {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Vertical space between row 1 and row 2 */
+}
+.project-pics .l1{
+    margin-top: 40px;
+}
+
+/* Common styling for both rows */
+.project-pics .l1,
+.project-pics .l2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Common styling for all blocks */
+.project-pics [class^="l"] > div {
+  height: 480px; /* Adjust height as needed */
+  background-color: #e0e0e0; /* Fallback color */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px; /* Optional: adds smooth rounded corners */
+}
+
+/* --- ROW 2 LAYOUT (3 Equal Blocks) --- */
+/* Each block takes 32%, leaving 4% total for the two spaces (2% each) */
+.project-pics .l2 .b1,
+.project-pics .l2 .b2,
+.project-pics .l2 .b3 {
+  width: 32%;
+}
+.project-pics .l2 .b1{
+    background-position: top;
+}
+.project-pics .l2 .b2{
+    background-position: center;
+}
+
+/* --- ROW 1 LAYOUT (2 Blocks) --- */
+/* b1 aligns perfectly above Row 2's b1 */
+.project-pics .l1 .b1 {
+  width: 32%;
+}
+
+/* b2 spans the width of Row 2's b2 + b3 PLUS the 2% space between them (32% + 2% + 32% = 66%) */
+.project-pics .l1 .b2 {
+  width: 66%;
+  background-position: center;
+}
+
+/* --- BACKGROUND IMAGES --- */
+/* Replace the URLs below with your actual image paths */
+.project-pics .l1 .b1, .project-pics .l1 .b2, .project-pics .l2 .b1, .project-pics .l2 .b2 {
+  background-image: url('https://i.pinimg.com/1200x/0d/40/bd/0d40bd812b23282577b1028828ac544b.jpg');
+}
+
+
+.project-pics .l2 .b3 {
+  background-image: url('https://i.pinimg.com/1200x/a5/57/1e/a5571e4525488c0e01b748b7ca0ce570.jpg');
+}
+/* Ensure the b3 block can trap absolutely positioned children */
+.project-pics .l2 .b3 {
+  position: relative;
+  overflow: hidden; /* Keeps rounded corners clean if icon/text touch the edges */
+  padding: 16px; /* Adds breathing room inside the edges */
+  box-sizing: border-box; /* Ensures padding doesn't distort the block's size */
+  /* Retain your existing background image and height rules here */
+  /* Add your custom bottom-right curve here */
+  border-bottom-right-radius: 150px;
+}
+
+/* --- TOP RIGHT ARROW ICON --- */
+.project-pics .l2 .b3 i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 30%;
+  /* Flexbox to perfectly center the icon symbol inside its 30% x 30% box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Styling the icon glyph */
+  font-size: 100px; /* Adjust glyph size as needed */
+  color: black;
+  background-color: #ccff00; /* Optional: slight dark background to make icon pop over images */
+  border-bottom-left-radius: 8px; /* Optional: adds style to the icon box */
+}
+
+/* --- BOTTOM 40-50% TEXT CONTAINER --- */
+.project-pics .l2 .b3 .text-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%; /* Covers 45% of the bottom of the block */
+  
+  /* Layout to stack the h2 tags nicely */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Pushes text toward the very bottom */
+  padding: 20px;
+  box-sizing: border-box;
+  
+  /* Optional: Subtle gradient so white text is readable over any image */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+}
+
+/* --- TYPOGRAPHY STYLING --- */
+/* Reset default h2 margins so they stack cleanly */
+.project-pics .l2 .b3 h2 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Lighter font weight for 2022 */
+.project-pics .l2 .b3 .year {
+  font-size: 30px;
+  font-weight: 500; /* Lighter weight */
+  /* opacity: 0.85; */
+  margin-bottom: 4px; /* Slight gap before the title */
+}
+
+/* Heavier font weight for Gerades Haus */
+.project-pics .l2 .b3 .title {
+  font-size: 70px;
+  font-weight: 700; /* Heavier weight */
+  letter-spacing: 2px;
+}
