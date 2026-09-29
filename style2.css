@@ -18,23 +18,18 @@
 }
 html,
 body {
-  /* Allow the body to scroll vertically */
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 .hero-section {
   width: 100vw;
-  /* Changed fixed height to min-height for responsive scaling */
-  min-height: 2800px;
+  height: 2800px;
   background-color: #d5ff40;
-  padding: 60px 100px;
-  font-family: poppins;
 }
 
 nav {
   /* background-color: burlywood; */
-  padding: 0;
+  padding: 60px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,7 +55,11 @@ nav a {
   color: black;
   text-decoration: none;
 }
-
+.hero-section {
+  /* background-color:crimson; */
+  padding: 60px 100px;
+  font-family: poppins;
+}
 section #hero-text1 {
   /* background-color: red; */
   display: flex;
@@ -320,97 +319,92 @@ section .agency {
   font-weight: 0;
 }
 
-/* =======================================
-   FLUID QUOTE SECTION ("Creative Mind")
-   ======================================= */
-.quote-sec {
-  width: 100%;
-  overflow: hidden; /* Prevents edge-case horizontal scroll */
-}
-
 .quote {
   margin-top: 100px;
   background-color: #292929;
-  /* Use fluid padding (viewport width) instead of fixed pixels */
-  padding: 8vw 5vw; 
-  /* Remove the fixed 1000px height so it hugs the scaled text */
-  height: auto; 
+  padding: 50px 250px;
+  height: 1000px;
+  /* Center the grey box on the page and shrink-wrap its contents */
+  /* width: fit-content; */
   margin-inline: auto;
+
+  /* Stack the lines vertically */
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  gap: 2vw; /* Slight gap between rows */
 }
 
 .quote .line {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centers the whole sentence */
-  gap: 1.5vw; /* Fluid gap between words and image blocks */
+  justify-content: space-between; /* Keeps items naturally next to each other */
+  gap: 0px; /* Controls the exact space between words and the image blocks */
   color: #c4c4c4;
   margin: 0;
   padding: 0;
   width: 100%;
-  /* Force it to NEVER wrap so the design stays intact */
-  flex-wrap: nowrap; 
 }
 
 .quote .line h1 {
-  /* Clamp dynamically scales: min 20px, prefers 6.5vw, max 140px */
-  font-size: clamp(20px, 6.5vw, 140px);
-  font-weight: 500;
+  font-size: 140px; /* Kept your sizing */
+  font-weight: 500; /* Adjusted slightly to match the image's thicker font */
+
+  /* CRITICAL FIXES FOR NO GAPS: */
   margin: 0;
   line-height: 0.85;
-  letter-spacing: -0.2vw;
-  white-space: nowrap; /* Prevents words from breaking in half */
+  letter-spacing: -3px;
 }
 
-/* --- Scaling Image Blocks --- */
-.line .b1, .line .B2, .line .B3, .line .B5 {
-  /* Base fluid height for all blocks */
-  height: clamp(25px, 4.5vw, 100px);
-  background-position: center;
+/* --- Styling your placeholder divs --- */
+
+/* Pill shapes */
+.line .b1 {
+  height: 100px;
+  width: 300px;
+  border-radius: 80px;
+  background-color: #555; /* Placeholder grey */
+  background-image: url(https://i.pinimg.com/1200x/0d/40/bd/0d40bd812b23282577b1028828ac544b.jpg);
+  background-position: bottom;
   background-size: cover;
 }
 
-.line .b1 {
-  width: clamp(70px, 14vw, 300px);
-  border-radius: clamp(20px, 4vw, 80px);
-  background-color: #555;
-  background-image: url(https://i.pinimg.com/1200x/0d/40/bd/0d40bd812b23282577b1028828ac544b.jpg);
-  background-position: bottom;
-}
-
+/* Abstract circle */
 .line .B2 {
-  width: clamp(40px, 7vw, 150px);
-  border-radius: clamp(15px, 3vw, 50px);
+  height: 100px;
+  width: 150px;
+  border-radius: 50px;
   background-color: #555;
   background-image: url(https://i.pinimg.com/1200x/0d/40/bd/0d40bd812b23282577b1028828ac544b.jpg);
   background-position: bottom;
+  background-size: cover;
 }
 
+/* Neon arrow circle */
 .line .B3 {
-  width: clamp(30px, 6vw, 125px);
-  border-radius: clamp(15px, 3vw, 50px);
+  height: 100px;
+  width: 125px;
+  border-radius: 50px;
   background-color: #ccff00;
+
+  /* If you want to add an arrow character inside your HTML later, this centers it */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.line .B3 i {
-  /* Scales the arrow icon down with the block */
-  font-size: clamp(15px, 3.5vw, 80px);
   color: #000;
+  font-size: 40px;
 }
-
+.line .B3 i {
+  font-size: 80px;
+}
 .line .B5 {
-  width: clamp(55px, 10vw, 220px);
-  border-radius: clamp(15px, 3.5vw, 60px);
+  height: 100px;
+  width: 220px;
+  border-radius: 60px;
   background-color: #c4c4c4;
   background-image: url(https://i.pinimg.com/1200x/0d/40/bd/0d40bd812b23282577b1028828ac544b.jpg);
   background-position: bottom;
+  background-size: cover;
 }
 
 .best-project-sec {
@@ -679,7 +673,6 @@ section .agency {
 }
 footer {
   margin-top: 100px;
-  padding-bottom: 50px;
 }
 .designer {
   text-align: center;
@@ -701,240 +694,3 @@ footer {
   font-size: 30px;
 }
 
-/* =========================================================
-   RESPONSIVE DESIGN MEDIA QUERIES 
-   Added rules to override large static values dynamically
-   ========================================================= */
-
-/* Tablets and Laptops (max-width: 1200px) */
-@media screen and (max-width: 1200px) {
-  /* Let hero height adapt to its contents */
-  .hero-section {
-    min-height: auto;
-    padding-bottom: 150px;
-  }
-  
-  /* Scale down oversized hero text */
-  #hero-text1 h1, #hero-text2 h1 {
-    font-size: 18vw;
-    line-height: 18vw;
-  }
-  
-  nav .part2 {
-    gap: 60px;
-  }
-  
-  /* Reduce quote section width and paddings */
-  .quote {
-    padding: 50px 100px;
-    height: auto;
-  }
-  .quote .line h1 {
-    font-size: 8vw;
-  }
-}
-
-/* Smaller Tablets (max-width: 992px) */
-@media screen and (max-width: 992px) {
-  /* Condense navigation structure */
-  .hero-section, nav, .sec2 {
-    padding: 40px 50px;
-  }
-  nav .part2 {
-    gap: 30px;
-  }
-  nav h2 { font-size: 36px; }
-  nav a { font-size: 20px; }
-  
-  /* Restructure hero modules */
-  #hero-text1 #video {
-    width: 300px;
-    height: 100px;
-    margin-top: 20px;
-  }
-  #hero-text2 p {
-    font-size: 24px;
-    width: 60%;
-  }
-  
-  /* Shrink enormous image component */
-  .image {
-    height: 600px;
-    margin-top: 100px;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
-  }
-  .image .arrow {
-    width: 200px;
-    height: 200px;
-    top: -10%;
-    right: 5%;
-  }
-  .arrow i { font-size: 150px; }
-  
-  /* Wrap agency boxes instead of stretching */
-  .agency {
-    flex-wrap: wrap;
-    justify-content: center;
-    height: auto;
-    gap: 20px;
-  }
-  .best-agency, .world-agency {
-    width: 100%;
-    height: 100px;
-  }
-  
-  /* Adjust marquee track banner */
-  .banner {
-    margin-top: -100px;
-    height: 200px;
-  }
-  .track h1 { font-size: 5rem; }
-  
-  /* Convert services layout to single column */
-  .services {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-  }
-  .services .left h1 { font-size: 6rem; }
-  
-  .design-opt {
-    height: 150px;
-    font-size: 30px;
-    padding: 20px;
-  }
-  .designs .design-opt i { font-size: 80px; }
-  
-  /* Adjust decorative shapes inside quotes */
-  .quote { padding: 50px; }
-  .line .b1, .line .B5 { width: 150px; height: 60px; }
-  .line .B2, .line .B3 { width: 80px; height: 60px; }
-  
-  /* Stack projects section vertically */
-  .best-projects {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .best-projects h1 { font-size: 10vw; }
-  .best-projects span { font-size: 12vw; }
-  .project-categories { flex-wrap: wrap; }
-  
-  .follow-us-sec {
-    height: auto;
-    padding: 100px 20px;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
-  }
-  .discuss h1 { font-size: 10vw; }
-  
-  .designer h1 { font-size: 10vw; }
-  .footer-links {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-}
-
-/* Mobile Layout (max-width: 768px) */
-@media screen and (max-width: 768px) {
-  /* Center navigation globally */
-  nav {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-  nav .part2 {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* Stack hero text modules vertically */
-  #hero-text1, #hero-text2 {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  #hero-text1 #video {
-    width: 100%;
-    height: 150px;
-  }
-  #hero-text2 p {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .image {
-    height: 400px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-  }
-  .image .arrow {
-    width: 120px;
-    height: 120px;
-  }
-  .arrow i { font-size: 80px; }
-  
-  /* Collapse services interactive rows */
-  .services .row {
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-  }
-  .right button { width: 100%; }
-  
-  /* Allow quote line items to wrap organically */
-  .quote .line {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    gap: 10px;
-  }
-  
-  /* Break image grids into a vertical stack */
-  .project-pics .l1, .project-pics .l2 {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .project-pics [class^="l"] > div {
-    width: 100% !important;
-    height: 300px;
-  }
-  .project-pics .l2 .b3 { border-bottom-right-radius: 80px; }
-  
-  .interact { flex-direction: column; }
-  .interact button { width: 100%; }
-}
-
-/* Small Mobile Layout (max-width: 480px) */
-@media screen and (max-width: 480px) {
-  /* Maximize space with smaller padding */
-  .hero-section, .sec2 { padding: 20px; }
-  nav { padding: 0; }
-  
-  #hero-text1 h1, #hero-text2 h1 {
-    font-size: 22vw;
-    line-height: 22vw;
-  }
-  
-  .banner {
-    margin-top: -50px;
-    height: 150px;
-  }
-  .track h1 { font-size: 3rem; }
-  
-  .services .left h1 { font-size: 15vw; }
-  .services .left p { font-size: 20px; }
-  
-  .design-opt {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  
-  .best-projects p { font-size: 20px; }
-  .best-project-sec { margin-top: 80px; }
-}
